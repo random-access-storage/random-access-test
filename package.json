@@ -1,0 +1,30 @@
+{
+  "name": "random-access-test",
+  "version": "1.0.0",
+  "description": "random-access compatibility tests",
+  "main": "index.js",
+  "devDependencies": {
+    "tape": "^4.8.0",
+    "prettier": "^1.9.2",
+    "lint-staged": "^7.2.0"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --parser flow --no-semi --write",
+      "git add"
+    ]
+  },
+  "scripts": {
+    "precommit": "lint-staged"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/random-access-storage/random-access-storage.git"
+  },
+  "author": "Mathias Buus (@mafintosh)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/random-access-storage/random-access-storage/issues"
+  },
+  "homepage": "https://github.com/random-access-storage/random-access-storage"
+}
