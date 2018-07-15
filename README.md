@@ -14,6 +14,7 @@ This module provides set of generic tests to verify API compatibility.
 var test = require("random-access-test")
 var randomAccess = require("random-access-file") // Or your package instead
 var path = require("path")
+var os = require("os")
 
 var tmp = path.join(
   os.tmpdir(),
