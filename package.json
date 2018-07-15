@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "description": "random-access compatibility tests",
   "main": "index.js",
+  "dependencies": {
+    "tape": "^4.9.1"
+  },
   "devDependencies": {
-    "tape": "^4.8.0",
     "prettier": "^1.9.2",
     "lint-staged": "^7.2.0"
   },
