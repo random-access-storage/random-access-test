@@ -18,7 +18,8 @@
     ]
   },
   "scripts": {
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "test": "node test.js"
   },
   "repository": {
     "type": "git",
