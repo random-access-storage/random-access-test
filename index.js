@@ -49,7 +49,7 @@ module.exports = function(createRandomAccessFile, options) {
   })
 
   tape("random access write and read", function(t) {
-    createRandomAccessFile("write-and-read.txt", null, function(file) {
+    createRandomAccessFile("random-access.txt", null, function(file) {
       file.write(10, Buffer.from("hi"), function(err) {
         t.error(err, "no error")
         file.write(0, Buffer.from("hello"), function(err) {
