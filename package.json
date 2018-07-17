@@ -7,8 +7,9 @@
     "tape": "^4.9.1"
   },
   "devDependencies": {
+    "lint-staged": "^7.2.0",
     "prettier": "^1.9.2",
-    "lint-staged": "^7.2.0"
+    "random-access-file": "^2.0.1"
   },
   "lint-staged": {
     "*.js": [
@@ -17,7 +18,8 @@
     ]
   },
   "scripts": {
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "test": "node test.js"
   },
   "repository": {
     "type": "git",
