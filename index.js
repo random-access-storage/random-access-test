@@ -267,4 +267,43 @@ module.exports = function(createRandomAccessFile, options) {
       )
     })
   }
+
+  tape("simultaneous writes and reads", function(t) {
+    let i = 0
+    createRandomAccessFile("write-and-read-simultaneous.txt", null, function(file) {
+      file.write(0, Buffer.from("hello"), function(err) {
+        t.error(err, "no error")
+        file.read(0, 5, function(err, buf) {
+          t.error(err, "no error")
+          t.same(buf, Buffer.from("hello"))
+          i++
+          if (i == 3) {
+            file.destroy(t.end)
+          }
+        })
+      })
+      file.write(10, Buffer.from("hallo"), function(err) {
+        t.error(err, "no error")
+        file.read(10, 5, function(err, buf) {
+          t.error(err, "no error")
+          t.same(buf, Buffer.from("hallo"))
+          i++
+          if (i == 3) {
+            file.destroy(t.end)
+          }
+        })
+      })
+      file.write(5, Buffer.from("hola!"), function(err) {
+        t.error(err, "no error")
+        file.read(5, 5, function(err, buf) {
+          t.error(err, "no error")
+          t.same(buf, Buffer.from("hola!"))
+          i++
+          if (i == 3) {
+            file.destroy(t.end)
+          }
+        })
+      })
+    })
+  })
 }
